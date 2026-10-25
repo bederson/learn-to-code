@@ -4,6 +4,6 @@ import { add } from "./setup";
 
 describe("setup", () => {
   it("adds 1 + 1 to get 2", () => {
-    expect(add(1, 1)).toBe(3);
+    expect(add(1, 1)).toBe(2);
   });
 });
