@@ -8,7 +8,13 @@
   </head>
   <body>
     <h1>One-Ball Billiards</h1>
-    <p id="message">Coming soon...</p>
+    <p>Press on the table, pull back, and let go to shoot.</p>
+    <div class="scoreboard">
+      <span>Score: <strong id="score">0</strong></span>
+      <span>Shots: <strong id="shots">0</strong></span>
+      <button id="reset" type="button">Reset</button>
+    </div>
+    <canvas id="table"></canvas>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

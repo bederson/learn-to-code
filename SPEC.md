@@ -1,5 +1,5 @@
 # Perspective
-take the perspective of someone that has never coded before. Forget anything you know about me. I want to build a project that is going to teach me about the basic of coding. 
+Take the perspective of someone that has never coded before. Forget anything you know about me. I want to build a project that is going to teach me about the basic of coding. 
 
 ## Technologies
 Let's use web technologies - probably typescript, html, and css only.

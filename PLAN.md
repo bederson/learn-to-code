@@ -54,24 +54,24 @@ Each step also teaches one basic coding idea.
 - *Test:* a ball over a pocket is sunk; a ball nearby is not.
 - *You learn:* arrays and loops.
 
-### 6. Hitting the ball
+### 6. Hitting the ball ✅
 - Click and drag to aim. The drag direction and length set the shot's direction and power, up to a maximum.
 - *Test:* the drag-to-velocity math.
 - *You learn:* user input, events.
 
-### 7. Drawing and the game loop
+### 7. Drawing and the game loop ✅
 - Draw the table, pockets and ball on the canvas.
 - Use `requestAnimationFrame` to run about 60 physics steps and redraws per second.
 - *Test:* one full "step" of the game. The drawing itself gets checked by eye.
 
-### 8. Score
+### 8. Score ✅
 - The score is the number of balls that have gone into a hole.
-- When the ball is sunk, add 1 to the score and put a new ball back on the table.
+- When the ball is sunk, add 1 to the score. (Putting a new ball back on the table was already done in Step 7.)
 - Save the score in the browser's `localStorage` so it survives a page reload. Show it on the page.
 - *Test:* sinking a ball adds 1. Saving and then loading gives back the same score. With nothing saved yet, the score starts at 0. The tests use a pretend storage object, so they don't need a real browser.
 - *You learn:* state, and saving data between visits.
 
-### 9. Polish (optional)
+### 9. Polish ✅
 - An aim line, a reset button and a shot counter.
 
 ## GitHub (only when directed)

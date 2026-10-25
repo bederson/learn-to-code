@@ -3,4 +3,36 @@ body {
   background: #1b1b1b;
   color: #eee;
   text-align: center;
+  margin: 0;
+  padding: 16px;
+}
+
+/* The table, with a wooden rail around it. */
+canvas {
+  max-width: 100%;
+  border: 16px solid #6b3e1f;
+  border-radius: 8px;
+  box-sizing: border-box;
+  touch-action: none; /* so dragging on a phone aims instead of scrolling */
+  cursor: crosshair;
+}
+
+/* Score, shots, and the reset button, in a row above the table. */
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+button {
+  font: inherit;
+  padding: 4px 16px;
+  border-radius: 6px;
+  border: none;
+  background: #eee;
+  color: #1b1b1b;
+  cursor: pointer;
 }
