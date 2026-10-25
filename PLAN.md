@@ -35,21 +35,21 @@ Each step also teaches one basic coding idea.
 - Write `add`, `scale` and `length` functions.
 - *You learn:* variables, functions, types.
 
-### 2. Movement
+### 2. Movement ✅
 - Each moment, the ball's position goes up by its velocity multiplied by the time step.
 - *Test:* a ball at (0,0) moving at (10,0) is at (1,0) after 0.1 seconds.
 
-### 3. Friction
+### 3. Friction ✅
 - Each step makes the ball a little slower. It stops completely below a tiny speed.
 - *Test:* speed always drops, and the ball eventually stops.
 - *You learn:* `if` statements.
 
-### 4. Wall bounces
+### 4. Wall bounces ✅
 - When the ball reaches a cushion, flip that part of its velocity and keep the ball inside the table.
 - *Test:* a ball moving right into the right wall ends up moving left.
 - *You learn:* comparisons, edge cases.
 
-### 5. Pockets
+### 5. Pockets ✅
 - Six holes. If the ball's center gets close enough to one, the ball is sunk.
 - *Test:* a ball over a pocket is sunk; a ball nearby is not.
 - *You learn:* arrays and loops.

@@ -1,6 +1,6 @@
 // Tests for vectors: pairs of numbers (x, y) used for positions and speeds.
 import { describe, it, expect } from "vitest";
-import { vec, add, scale, length } from "./vector";
+import { vec, add, subtract, scale, length, distance } from "./vector";
 
 describe("vec", () => {
   it("makes a vector from x and y", () => {
@@ -35,5 +35,21 @@ describe("length", () => {
 
   it("a zero vector has length 0", () => {
     expect(length(vec(0, 0))).toBe(0);
+  });
+});
+
+describe("subtract", () => {
+  it("subtracts the x parts and the y parts", () => {
+    expect(subtract(vec(10, 20), vec(1, 2))).toEqual({ x: 9, y: 18 });
+  });
+});
+
+describe("distance", () => {
+  it("measures how far apart two points are", () => {
+    expect(distance(vec(1, 1), vec(4, 5))).toBe(5);
+  });
+
+  it("a point is 0 away from itself", () => {
+    expect(distance(vec(7, 7), vec(7, 7))).toBe(0);
   });
 });

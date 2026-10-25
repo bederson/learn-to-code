@@ -21,3 +21,13 @@ export function scale(v: Vec, factor: number): Vec {
 export function length(v: Vec): number {
   return Math.sqrt(v.x * v.x + v.y * v.y);
 }
+
+// Subtract one vector from another: the arrow pointing from b to a.
+export function subtract(a: Vec, b: Vec): Vec {
+  return vec(a.x - b.x, a.y - b.y);
+}
+
+// How far apart two points are.
+export function distance(a: Vec, b: Vec): number {
+  return length(subtract(a, b));
+}
