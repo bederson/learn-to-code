@@ -30,7 +30,7 @@ Each step also teaches one basic coding idea.
 - Write one trivial test (`1 + 1 === 2`) to prove the test harness works.
 - *You learn:* the terminal, files and folders, what a test is.
 
-### 1. Vectors
+### 1. Vectors ✅
 - Positions and speeds are pairs of numbers (x, y).
 - Write `add`, `scale` and `length` functions.
 - *You learn:* variables, functions, types.
