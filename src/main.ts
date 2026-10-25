@@ -1,7 +1,7 @@
 // This file runs in the browser when the page loads.
 // It connects the game to the screen and the mouse, then keeps it running.
 import { Vec, vec } from "./vector";
-import { makeGame, step, shoot, resetGame } from "./game";
+import { makeGame, step, shoot, resetGame, frameTime } from "./game";
 import { draw } from "./draw";
 import { loadNumber, saveNumber } from "./storage";
 
@@ -77,9 +77,7 @@ canvas.addEventListener("pointerup", () => {
 let lastTime = performance.now();
 
 function frame(now: number) {
-  // How many seconds since the last frame. If the tab was hidden for a while,
-  // pretend only a tiny bit of time passed so the ball doesn't jump.
-  const dt = Math.min((now - lastTime) / 1000, 1 / 30);
+  const dt = frameTime(lastTime, now);
   lastTime = now;
 
   const scoreBefore = game.score;

@@ -55,6 +55,12 @@ describe("applyFriction", () => {
     expect(applyFriction(ball, 50, 1).vel).toEqual({ x: 0, y: 0 });
   });
 
+  it("a ball sitting still stays still, even if time goes backwards", () => {
+    // Bug found by playing: a negative time step made the ball's position "not a number".
+    const ball = makeBall(vec(0, 0), 10);
+    expect(applyFriction(ball, 50, -0.01).vel).toEqual({ x: 0, y: 0 });
+  });
+
   it("eventually stops a fast ball", () => {
     let ball = { ...makeBall(vec(0, 0), 10), vel: vec(500, 300) };
     for (let i = 0; i < 1000; i++) {

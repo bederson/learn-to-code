@@ -47,6 +47,15 @@ export function shoot(game: Game, pressedAt: Vec, releasedAt: Vec): Game {
   return { ...game, ball: { ...game.ball, vel }, shots: game.shots + 1 };
 }
 
+// How many seconds passed between two frames (times are in milliseconds).
+// Never less than 0, in case the browser's clock puts the first frame slightly
+// before the page started. Never more than 1/30 of a second, so the ball
+// doesn't jump if the tab was hidden for a while.
+export function frameTime(lastTime: number, now: number): number {
+  const seconds = (now - lastTime) / 1000;
+  return Math.min(Math.max(seconds, 0), 1 / 30);
+}
+
 // Let a small amount of time (dt, in seconds) pass.
 export function step(game: Game, dt: number): Game {
   let ball = move(game.ball, dt);

@@ -1,7 +1,7 @@
 // Tests for the game as a whole (Step 7): one "step" of time passing.
 import { describe, it, expect } from "vitest";
 import { vec, length } from "./vector";
-import { makeGame, step, shoot, resetGame } from "./game";
+import { makeGame, step, shoot, resetGame, frameTime } from "./game";
 
 describe("makeGame", () => {
   it("starts with the ball sitting still at the start spot", () => {
@@ -128,5 +128,21 @@ describe("resetGame", () => {
     expect(reset.shots).toBe(0);
     expect(reset.ball.pos).toEqual(played.startPos);
     expect(reset.ball.vel).toEqual({ x: 0, y: 0 });
+  });
+});
+
+// How much time passes between two frames of the game loop.
+describe("frameTime", () => {
+  it("is the time between frames, in seconds", () => {
+    expect(frameTime(1000, 1016)).toBeCloseTo(0.016);
+  });
+
+  it("is never negative, even if the browser's clock says the frame came first", () => {
+    // Bug found by playing: this made the ball disappear when the page loaded.
+    expect(frameTime(1000, 995)).toBe(0);
+  });
+
+  it("is never more than 1/30 of a second, so the ball doesn't jump after the tab was hidden", () => {
+    expect(frameTime(1000, 60000)).toBeCloseTo(1 / 30);
   });
 });

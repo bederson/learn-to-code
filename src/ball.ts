@@ -22,6 +22,12 @@ export function move(ball: Ball, dt: number): Ball {
 // "slowdown" is how much speed it loses per second.
 export function applyFriction(ball: Ball, slowdown: number, dt: number): Ball {
   const speed = length(ball.vel);
+
+  // A ball that isn't moving has nothing to slow down.
+  if (speed === 0) {
+    return ball;
+  }
+
   const newSpeed = speed - slowdown * dt;
 
   // If friction would take away all the speed (or more), just stop.
